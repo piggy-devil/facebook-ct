@@ -79,7 +79,6 @@
 <script>
     export default {
         name: "Post",
-
         props: [
             'post',
         ],
