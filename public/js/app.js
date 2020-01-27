@@ -2052,6 +2052,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -2078,6 +2080,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NewPost",
   computed: {
@@ -2085,9 +2088,9 @@ __webpack_require__.r(__webpack_exports__);
       get: function get() {
         return this.$store.getters.postMessage;
       },
-      set: function set(postMessage) {
+      set: lodash__WEBPACK_IMPORTED_MODULE_0___default.a.debounce(function (postMessage) {
         this.$store.commit('updateMessage', postMessage);
-      }
+      }, 300)
     }
   }
 });
