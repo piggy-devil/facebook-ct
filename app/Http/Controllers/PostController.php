@@ -35,7 +35,7 @@ class PostController extends Controller
 
         if (isset($data['image'])) {
             $image = $data['image']->store('post-images', 'public');
-
+            dd($data['image']);
             Image::make($data['image'])
                 ->fit($data['width'], $data['height'])
                 ->save(storage_path('app/public/post-images/'.$data['image']->hashName()));

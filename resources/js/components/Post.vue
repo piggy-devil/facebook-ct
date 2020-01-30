@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div class="w-full" v-if="post.data.attributes.image">
+        <div class="w-full" v-if="post.data.attributes.image.length">
             <img :src="post.data.attributes.image" alt="post image" class="w-full">
         </div>
 
@@ -55,7 +55,7 @@
                 </button>
             </div>
 
-            <div class="flex my-4 items-center" v-for="comment in post.data.attributes.comments.data">
+            <div class="flex my-4 items-center" v-for="(comment, index) in post.data.attributes.comments.data" :key="index">
                 <div class="w-8">
                     <img :src="comment.data.attributes.commented_by.data.attributes.profile_image.data.attributes.path" alt="profile image for user" class="w-8 h-8 object-cover rounded-full">
                 </div>
